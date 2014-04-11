@@ -31,9 +31,9 @@ var results = ArraySelector.getSumCombinations(arr, 10);
 ```js
 
 var block = document.getElementById("black_square");
-    var handler = function(event) {
-        console.log("Handler");
-    };
+var handler = function(event) {
+    console.log("Handler");
+};
 
 handler = handler.delayCall(1000); // не чаще, чем 1 раз в секунду
 block.onclick = function() {
