@@ -17,12 +17,15 @@
 <body>
     <div id="black_square"></div>
 <script>
+
+    // first task
     var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     var sets = ArraySelector.getSumCombinations(arr, 10);
     sets.forEach(function(itemSet) {
         console.log(itemSet.join(', '));
     });
 
+    // second task
     var block = document.getElementById("black_square");
     var handler = function(event) {
         console.log("Handler");
