@@ -1,4 +1,4 @@
-ArraySelector
+Tasks
 ----------
 
 Some javascript tasks from Yandex.
