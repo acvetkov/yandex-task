@@ -3,6 +3,10 @@ var ArraySelector;
 (function() {
     "use strict";
 
+    /**
+     * Some Monkey Patching.
+     * Only for example, don't use in real project
+     */
     if (typeof Array.prototype.filter === "undefined") {
         Array.prototype.filter = function(array, callback, thisArg) {
             var result = [];
@@ -47,6 +51,12 @@ var ArraySelector;
             };
 
         return {
+            /**
+             * Find all subsets of original array, where sum of elements equals to need sum
+             * @param arr (array) original array
+             * @param sum (number) need sum
+             * @returns {*}
+             */
             getSumCombinations: function(arr, sum) {
                 if ((arr instanceof Array)) {
                     searchArr = arr;

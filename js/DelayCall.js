@@ -1,4 +1,5 @@
-(function(){
+(function() {
+
     "use strict";
     Function.prototype.delayCall = function(delay) {
         delay = clampDelay(delay);
@@ -9,7 +10,7 @@
             var time = new Date().getTime();
             if (time - func.lastRun > delay) {
                 func.lastRun = time;
-                func.apply(this, [].slice.call(arguments));
+                func.apply(func, [].slice.call(arguments));
             }
         };
         return call;
