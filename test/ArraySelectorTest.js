@@ -50,4 +50,14 @@ describe('ArraySelector tests', function(){
             return result;
         }
     });
+
+    it('should return empty array or one subset array', function(){
+        var arr = [1, 2, 3],
+            expected = [[1, 2, 3]];
+        var result = ArraySelector.getSumCombinations(arr, 6);
+        assert.deepEqual(result, expected);
+
+        var emptyResult = ArraySelector.getSumCombinations(arr, 7);
+        assert.equal(emptyResult.length, 0);
+    });
 });
