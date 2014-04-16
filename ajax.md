@@ -37,5 +37,19 @@ function getXHR() {
 
 Пример использования:
 ```js
+var head = document.getElementsByTagName("head")[0];
+var script = document.createElement("script);
+script.async = true;
+script.src = "/data/items/?callback=jsonHandler";
+head.appendChild(script);
 
+function jsonHandler(jsonData) {
+    console.log(jsonData);
+}
+```
+
+При этом сервер должен обернуть ответ в функцию переданную в параметр callback
+
+```php
+<?echo "jsonHandler($json)";?>
 ```
