@@ -74,3 +74,5 @@ var handler = function(jsonData) {
 ```php
 <?echo "<script>parent.handler($json)</script>";?> # parent - ссылка на родительское окно
 ```
+
+С помощью iframe можно отправить POST запрос. Для этого нужно создать форму, аттрибуту target установить имя нашего iframe, вызвать метод submit для формы
