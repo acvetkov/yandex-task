@@ -53,3 +53,24 @@ function jsonHandler(jsonData) {
 ```php
 <?echo "jsonHandler($json)";?>
 ```
+
+Аналогичным способом есть возможность передачи параметров серверу через динамически создаваемый iframe. Этот способ похож на JSONP, но у него есть кроссдоменное ограничение.
+Данные можно передать только на текущий домен и его субдомены.
+
+Пример реализации:
+
+```js
+var iframe = document.createElement("iframe");
+iframe.name = "tmp";
+iframe.src = "/data/items/?callback=jsonHandler";
+document.body.appendChild(iframe);
+
+var handler = function(jsonData) {
+    console.log(jsonData);
+}
+```
+
+Сервер так же, как и в случае с JSONP, должен обернуть ответ в функцию и теги <script>
+```php
+<?echo "<script>parent.handler($json)</script>";?> # parent - ссылка на родительское окно
+```
