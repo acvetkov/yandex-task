@@ -28,7 +28,7 @@ function getXHR() {
             return new ActiveXObject('Microsoft.XMLHTTP');
         }
     }
-    throw new Error("Youe browser don't support XMLHTTPRequest");
+    throw new Error("Your browser doesn't support XMLHTTPRequest");
 }
 ```
 
