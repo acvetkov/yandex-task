@@ -8,19 +8,19 @@ var ArraySelector;
      * Only for example, don't use in real project
      */
     if (typeof Array.prototype.filter === "undefined") {
-        Array.prototype.filter = function(array, callback, thisArg) {
+        Array.prototype.filter = function(callback, thisArg) {
             var result = [];
-            for (var i = 0, max = array.length; i < max; i++) {
-                if (typeof callback === "function" && callback.call(thisArg, array[i])) {
-                    result.push(array[i]);
+            for (var i = 0, max = this.length; i < max; i++) {
+                if (typeof callback === "function" && callback.call(thisArg, this[i])) {
+                    result.push(this[i]);
                 }
             }
             return result;
         };
-        Array.prototype.forEach = function(array, callback, thisArg) {
-            for (var i = 0, max = array.length; i < max; i++) {
+        Array.prototype.forEach = function(callback, thisArg) {
+            for (var i = 0, max = this.length; i < max; i++) {
                 if (typeof callback === "function") {
-                    callback.call(thisArg, array[i]);
+                    callback.call(thisArg, this[i]);
                 }
             }
         };
